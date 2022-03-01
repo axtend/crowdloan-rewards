@@ -17,7 +17,7 @@
 //! # Crowdloan Rewards Pallet
 //!
 //! This pallet issues rewards to citizens who participated in a crowdloan on the backing relay
-//! chain (eg Kusama) in order to help this parrachain acquire a parachain slot.
+//! chain (eg AxiaTest) in order to help this parrachain acquire a allychain slot.
 //!
 //! ## Monetary Policy
 //!
@@ -120,7 +120,7 @@ pub mod pallet {
 		/// that need to be presented to change a reward address through the relay keys
 		#[pallet::constant]
 		type RewardAddressRelayVoteThreshold: Get<Perbill>;
-		/// The currency in which the rewards will be paid (probably the parachain native currency)
+		/// The currency in which the rewards will be paid (probably the allychain native currency)
 		type RewardCurrency: Currency<Self::AccountId>;
 		/// The AccountId type contributors used on the relay chain.
 		type RelayChainAccountId: Parameter
@@ -156,7 +156,7 @@ pub mod pallet {
 
 	/// Stores info about the rewards owed as well as how much has been vested so far.
 	/// For a primer on this kind of design, see the recipe on compounding interest
-	/// https://substrate.dev/recipes/fixed-point.html#continuously-compounding
+	/// https://axlib.dev/recipes/fixed-point.html#continuously-compounding
 	#[derive(Default, Clone, Encode, Decode, RuntimeDebug, PartialEq, scale_info::TypeInfo)]
 	#[scale_info(skip_type_params(T))]
 	pub struct RewardInfo<T: Config> {
@@ -165,11 +165,11 @@ pub mod pallet {
 		pub contributed_relay_addresses: Vec<T::RelayChainAccountId>,
 	}
 
-	// This hook is in charge of initializing the vesting height at the first block of the parachain
+	// This hook is in charge of initializing the vesting height at the first block of the allychain
 	#[pallet::hooks]
 	impl<T: Config> Hooks<BlockNumberFor<T>> for Pallet<T> {
 		fn on_finalize(n: <T as frame_system::Config>::BlockNumber) {
-			// In the first block of the parachain we need to introduce the vesting block related info
+			// In the first block of the allychain we need to introduce the vesting block related info
 			if n == 1u32.into() {
 				<InitVestingBlock<T>>::put(T::VestingBlockProvider::current_block_number());
 			}

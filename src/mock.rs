@@ -18,7 +18,7 @@
 use crate::{self as pallet_crowdloan_rewards, Config};
 use cumulus_primitives_core::relay_chain::BlockNumber as RelayChainBlockNumber;
 use cumulus_primitives_core::PersistedValidationData;
-use cumulus_primitives_parachain_inherent::ParachainInherentData;
+use cumulus_primitives_allychain_inherent::AllychainInherentData;
 use cumulus_test_relay_sproof_builder::RelayStateSproofBuilder;
 use frame_support::{
 	construct_runtime,
@@ -51,17 +51,17 @@ construct_runtime!(
 		System: frame_system::{Pallet, Call, Config, Storage, Event<T>},
 		Balances: pallet_balances::{Pallet, Call, Storage, Config<T>, Event<T>},
 		Crowdloan: pallet_crowdloan_rewards::{Pallet, Call, Storage, Event<T>},
-		ParachainSystem: cumulus_pallet_parachain_system::{Pallet, Call, Storage, Inherent, Event<T>},
+		AllychainSystem: cumulus_pallet_allychain_system::{Pallet, Call, Storage, Inherent, Event<T>},
 		Utility: pallet_utility::{Pallet, Call, Storage, Event},
 	}
 );
 
 parameter_types! {
-	pub ParachainId: cumulus_primitives_core::ParaId = 100.into();
+	pub AllychainId: cumulus_primitives_core::ParaId = 100.into();
 }
 
-impl cumulus_pallet_parachain_system::Config for Test {
-	type SelfParaId = ParachainId;
+impl cumulus_pallet_allychain_system::Config for Test {
+	type SelfParaId = AllychainId;
 	type Event = Event;
 	type OutboundXcmpMessageSource = ();
 	type XcmpMessageHandler = ();
@@ -98,7 +98,7 @@ impl frame_system::Config for Test {
 	type AccountData = pallet_balances::AccountData<Balance>;
 	type OnNewAccount = ();
 	type OnKilledAccount = ();
-	type OnSetCode = cumulus_pallet_parachain_system::ParachainSetCode<Self>;
+	type OnSetCode = cumulus_pallet_allychain_system::AllychainSetCode<Self>;
 	type SystemWeightInfo = ();
 	type SS58Prefix = ();
 	type MaxConsumers = frame_support::traits::ConstU32<16>;
@@ -146,7 +146,7 @@ impl Config for Test {
 
 	type VestingBlockNumber = RelayChainBlockNumber;
 	type VestingBlockProvider =
-		cumulus_pallet_parachain_system::RelaychainBlockNumberProvider<Self>;
+		cumulus_pallet_allychain_system::RelaychainBlockNumberProvider<Self>;
 	type WeightInfo = ();
 }
 
@@ -232,7 +232,7 @@ pub(crate) fn roll_to(n: u64) {
 		};
 		let inherent_data = {
 			let mut inherent_data = InherentData::default();
-			let system_inherent_data = ParachainInherentData {
+			let system_inherent_data = AllychainInherentData {
 				validation_data: vfp.clone(),
 				relay_chain_state,
 				downward_messages: Default::default(),
@@ -240,19 +240,19 @@ pub(crate) fn roll_to(n: u64) {
 			};
 			inherent_data
 				.put_data(
-					cumulus_primitives_parachain_inherent::INHERENT_IDENTIFIER,
+					cumulus_primitives_allychain_inherent::INHERENT_IDENTIFIER,
 					&system_inherent_data,
 				)
 				.expect("failed to put VFP inherent");
 			inherent_data
 		};
 
-		ParachainSystem::on_initialize(System::block_number());
-		ParachainSystem::create_inherent(&inherent_data)
+		AllychainSystem::on_initialize(System::block_number());
+		AllychainSystem::create_inherent(&inherent_data)
 			.expect("got an inherent")
 			.dispatch_bypass_filter(RawOrigin::None.into())
 			.expect("dispatch succeeded");
-		ParachainSystem::on_finalize(System::block_number());
+		AllychainSystem::on_finalize(System::block_number());
 
 		Crowdloan::on_finalize(System::block_number());
 		Balances::on_finalize(System::block_number());

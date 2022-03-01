@@ -1,12 +1,12 @@
 #![cfg(feature = "runtime-benchmarks")]
 
 use crate::{BalanceOf, Call, Pallet, WRAPPED_BYTES_POSTFIX, WRAPPED_BYTES_PREFIX};
-use cumulus_pallet_parachain_system::Pallet as RelayPallet;
+use cumulus_pallet_allychain_system::Pallet as RelayPallet;
 use cumulus_primitives_core::{
 	relay_chain::{v1::HeadData, BlockNumber as RelayChainBlockNumber},
 	PersistedValidationData,
 };
-use cumulus_primitives_parachain_inherent::ParachainInherentData;
+use cumulus_primitives_allychain_inherent::AllychainInherentData;
 use ed25519_dalek::Signer;
 use frame_benchmarking::{account, benchmarks, impl_benchmark_test_suite};
 use frame_support::{
@@ -41,8 +41,8 @@ const MOCK_PROOF_HASH: [u8; 32] = [
 
 // These benchmarks only work with a Runtime that uses cumulus's RelayChainBlockNumberProvider.
 // This will improve once https://github.com/PureStake/crowdloan-rewards/pull/44 lands
-pub trait Config: crate::Config + cumulus_pallet_parachain_system::Config {}
-impl<T: crate::Config + cumulus_pallet_parachain_system::Config> Config for T {}
+pub trait Config: crate::Config + cumulus_pallet_allychain_system::Config {}
+impl<T: crate::Config + cumulus_pallet_allychain_system::Config> Config for T {}
 
 /// Default balance amount is minimum contribution
 fn default_balance<T: Config>() -> BalanceOf<T> {
@@ -82,7 +82,7 @@ fn create_inherent_data<T: Config>(block_number: u32) -> InherentData {
 	};
 	let inherent_data = {
 		let mut inherent_data = InherentData::default();
-		let system_inherent_data = ParachainInherentData {
+		let system_inherent_data = AllychainInherentData {
 			validation_data: vfp.clone(),
 			relay_chain_state: StorageProof::new(vec![MOCK_PROOF.to_vec()]),
 			downward_messages: Default::default(),
@@ -90,7 +90,7 @@ fn create_inherent_data<T: Config>(block_number: u32) -> InherentData {
 		};
 		inherent_data
 			.put_data(
-				cumulus_primitives_parachain_inherent::INHERENT_IDENTIFIER,
+				cumulus_primitives_allychain_inherent::INHERENT_IDENTIFIER,
 				&system_inherent_data,
 			)
 			.expect("failed to put VFP inherent");
