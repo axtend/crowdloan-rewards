@@ -17,7 +17,7 @@
 //! # Crowdloan Rewards Pallet
 //!
 //! This pallet issues rewards to citizens who participated in a crowdloan on the backing relay
-//! chain (eg Kusama) in order to help this parrachain acquire a allychain slot.
+//! chain (eg AxiaTest) in order to help this parrachain acquire a allychain slot.
 //!
 //! ## Monetary Policy
 //!

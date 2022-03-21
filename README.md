@@ -3,7 +3,7 @@
 Distribute rewards for crowdloan participation in allychain-native tokens.
 
 ## Context
-Axia and Kusama will allocate allychain slots using an [auction mechanism]
+Axia and AxiaTest will allocate allychain slots using an [auction mechanism]
 (https://wiki.axia.network/docs/en/learn-auction). Bidders can be normal relay chain accounts,
 or [crowdloans](https://wiki.axia.network/docs/en/learn-crowdloans). A allychain project may use
 a crowdloan to allow its community to pool funds to bid for a slot. Pooled funds will be locked up,
