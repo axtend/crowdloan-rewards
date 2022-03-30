@@ -68,7 +68,7 @@ version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fcb51a0695d8f838b1ee009b3fbf66bda078cd64590202a864a8f3e8c4315c47"
 dependencies = [
- "getrandom 0.2.5",
+ "getrandom 0.2.6",
  "once_cell",
  "version_check",
 ]
@@ -236,9 +236,9 @@ dependencies = [
 
 [[package]]
 name = "async-std"
-version = "1.10.0"
+version = "1.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f8056f1455169ab86dd47b47391e4ab0cbd25410a70e9fe675544f49bafaf952"
+checksum = "52580991739c5cdb36cde8b2a516371c0a3b70dda36d916cc08b82372916808c"
 dependencies = [
  "async-channel",
  "async-global-executor",
@@ -284,9 +284,9 @@ checksum = "30696a84d817107fc028e049980e09d5e140e8da8f1caeb17e8e950658a3cea9"
 
 [[package]]
 name = "async-trait"
-version = "0.1.52"
+version = "0.1.53"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "061a7acccaa286c011ddc30970520b98fa40e00c9d644633fb26b5fc63a265e3"
+checksum = "ed6aa3524a2dfcf9fe180c51eae2b58738348d819517ceadf95789c51fff7600"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -354,7 +354,7 @@ checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 [[package]]
 name = "axia-allychain"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "axia-core-primitives",
  "derive_more",
@@ -371,7 +371,7 @@ dependencies = [
 [[package]]
 name = "axia-core-primitives"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "parity-scale-codec",
  "parity-util-mem",
@@ -384,7 +384,7 @@ dependencies = [
 [[package]]
 name = "axia-node-jaeger"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "async-std",
  "axia-node-primitives",
@@ -402,10 +402,9 @@ dependencies = [
 [[package]]
 name = "axia-node-metrics"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "axia-primitives",
- "axlib-prometheus-endpoint",
  "bs58",
  "futures 0.3.21",
  "futures-timer",
@@ -415,13 +414,14 @@ dependencies = [
  "sc-cli",
  "sc-service",
  "sc-tracing",
+ "substrate-prometheus-endpoint",
  "tracing",
 ]
 
 [[package]]
 name = "axia-node-network-protocol"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "async-trait",
  "axia-node-jaeger",
@@ -439,7 +439,7 @@ dependencies = [
 [[package]]
 name = "axia-node-primitives"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "axia-allychain",
  "axia-primitives",
@@ -461,7 +461,7 @@ dependencies = [
 [[package]]
 name = "axia-node-subsystem-types"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "axia-node-jaeger",
  "axia-node-network-protocol",
@@ -469,18 +469,18 @@ dependencies = [
  "axia-overseer-gen",
  "axia-primitives",
  "axia-statement-table",
- "axlib-prometheus-endpoint",
  "derive_more",
  "futures 0.3.21",
  "sc-network",
  "smallvec",
+ "substrate-prometheus-endpoint",
  "thiserror",
 ]
 
 [[package]]
 name = "axia-overseer"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "axia-node-metrics",
  "axia-node-network-protocol",
@@ -501,7 +501,7 @@ dependencies = [
 [[package]]
 name = "axia-overseer-gen"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "async-trait",
  "axia-node-network-protocol",
@@ -518,7 +518,7 @@ dependencies = [
 [[package]]
 name = "axia-overseer-gen-proc-macro"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "proc-macro-crate 1.1.3",
  "proc-macro2",
@@ -529,7 +529,7 @@ dependencies = [
 [[package]]
 name = "axia-primitives"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "axia-allychain",
  "axia-core-primitives",
@@ -559,25 +559,11 @@ dependencies = [
 [[package]]
 name = "axia-statement-table"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "axia-primitives",
  "parity-scale-codec",
  "sp-core",
-]
-
-[[package]]
-name = "axlib-prometheus-endpoint"
-version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
-dependencies = [
- "async-std",
- "futures-util",
- "hyper",
- "log",
- "prometheus",
- "thiserror",
- "tokio",
 ]
 
 [[package]]
@@ -1125,7 +1111,7 @@ dependencies = [
 [[package]]
 name = "cumulus-pallet-allychain-system"
 version = "0.1.0"
-source = "git+https://github.com/axtend/cumulus?branch=cumulus#6dc5fc973187ecf67062ffb30b742d5f184fbce0"
+source = "git+https://github.com/axtend/cumulus?branch=cumulus#505f4d4f24b03680c56341317499bae369174102"
 dependencies = [
  "axia-allychain",
  "cumulus-pallet-allychain-system-proc-macro",
@@ -1155,7 +1141,7 @@ dependencies = [
 [[package]]
 name = "cumulus-pallet-allychain-system-proc-macro"
 version = "0.1.0"
-source = "git+https://github.com/axtend/cumulus?branch=cumulus#6dc5fc973187ecf67062ffb30b742d5f184fbce0"
+source = "git+https://github.com/axtend/cumulus?branch=cumulus#505f4d4f24b03680c56341317499bae369174102"
 dependencies = [
  "proc-macro-crate 1.1.3",
  "proc-macro2",
@@ -1166,7 +1152,7 @@ dependencies = [
 [[package]]
 name = "cumulus-primitives-allychain-inherent"
 version = "0.1.0"
-source = "git+https://github.com/axtend/cumulus?branch=cumulus#6dc5fc973187ecf67062ffb30b742d5f184fbce0"
+source = "git+https://github.com/axtend/cumulus?branch=cumulus#505f4d4f24b03680c56341317499bae369174102"
 dependencies = [
  "async-trait",
  "cumulus-primitives-core",
@@ -1189,7 +1175,7 @@ dependencies = [
 [[package]]
 name = "cumulus-primitives-core"
 version = "0.1.0"
-source = "git+https://github.com/axtend/cumulus?branch=cumulus#6dc5fc973187ecf67062ffb30b742d5f184fbce0"
+source = "git+https://github.com/axtend/cumulus?branch=cumulus#505f4d4f24b03680c56341317499bae369174102"
 dependencies = [
  "axia-allychain",
  "axia-core-primitives",
@@ -1205,7 +1191,7 @@ dependencies = [
 [[package]]
 name = "cumulus-relay-chain-interface"
 version = "0.1.0"
-source = "git+https://github.com/axtend/cumulus?branch=cumulus#6dc5fc973187ecf67062ffb30b742d5f184fbce0"
+source = "git+https://github.com/axtend/cumulus?branch=cumulus#505f4d4f24b03680c56341317499bae369174102"
 dependencies = [
  "async-trait",
  "axia-overseer",
@@ -1226,7 +1212,7 @@ dependencies = [
 [[package]]
 name = "cumulus-test-relay-sproof-builder"
 version = "0.1.0"
-source = "git+https://github.com/axtend/cumulus?branch=cumulus#6dc5fc973187ecf67062ffb30b742d5f184fbce0"
+source = "git+https://github.com/axtend/cumulus?branch=cumulus#505f4d4f24b03680c56341317499bae369174102"
 dependencies = [
  "axia-primitives",
  "cumulus-primitives-core",
@@ -1551,7 +1537,7 @@ checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
 [[package]]
 name = "fork-tree"
 version = "3.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "parity-scale-codec",
 ]
@@ -1569,7 +1555,7 @@ dependencies = [
 [[package]]
 name = "frame-benchmarking"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "frame-support",
  "frame-system",
@@ -1603,7 +1589,7 @@ dependencies = [
 [[package]]
 name = "frame-support"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "bitflags",
  "frame-metadata",
@@ -1632,7 +1618,7 @@ dependencies = [
 [[package]]
 name = "frame-support-procedural"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "Inflector",
  "frame-support-procedural-tools",
@@ -1644,7 +1630,7 @@ dependencies = [
 [[package]]
 name = "frame-support-procedural-tools"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "frame-support-procedural-tools-derive",
  "proc-macro-crate 1.1.3",
@@ -1656,7 +1642,7 @@ dependencies = [
 [[package]]
 name = "frame-support-procedural-tools-derive"
 version = "3.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1666,7 +1652,7 @@ dependencies = [
 [[package]]
 name = "frame-system"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "frame-support",
  "log",
@@ -1887,9 +1873,9 @@ dependencies = [
 
 [[package]]
 name = "getrandom"
-version = "0.2.5"
+version = "0.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d39cd93900197114fa1fcb7ae84ca742095eed9442088988ae74fa744e930e77"
+checksum = "9be70c98951c83b8d2f8f60d7065fa6d5146873094452a1008da8c2f1e4205ad"
 dependencies = [
  "cfg-if 1.0.0",
  "libc",
@@ -2115,9 +2101,9 @@ checksum = "c4a1e36c821dbe04574f602848a19f742f4fb3c98d40449f11bcad18d6b17421"
 
 [[package]]
 name = "hyper"
-version = "0.14.17"
+version = "0.14.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "043f0e083e9901b6cc658a77d1eb86f4fc650bbb977a4337dd63192826aa85dd"
+checksum = "b26ae0a80afebe130861d90abf98e3814a4f28a4c6ffeb5ab8ebb2be311e0ef2"
 dependencies = [
  "bytes 1.1.0",
  "futures-channel",
@@ -2244,9 +2230,9 @@ dependencies = [
 
 [[package]]
 name = "indexmap"
-version = "1.8.0"
+version = "1.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "282a6247722caba404c065016bbfa522806e51714c34f5dfc3e4a3a46fcb4223"
+checksum = "0f647032dfaa1f8b6dc29bd3edb7bbef4861b8b8007ebb118d6db284fd59f6ee"
 dependencies = [
  "autocfg",
  "hashbrown 0.11.2",
@@ -3168,9 +3154,9 @@ dependencies = [
 
 [[package]]
 name = "log"
-version = "0.4.15"
+version = "0.4.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1c4dcd960cc540667f619483fc99102f88d6118b87730e24e8fbe8054b7445e4"
+checksum = "6389c490849ff5bc16be905ae24bc913a9c8892e19b2341dbc175e14c341c2b8"
 dependencies = [
  "cfg-if 1.0.0",
  "value-bag",
@@ -3309,7 +3295,7 @@ dependencies = [
 [[package]]
 name = "metered-channel"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "derive_more",
  "futures 0.3.21",
@@ -3605,16 +3591,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "num-format"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bafe4179722c2894288ee77a9f044f02811c86af699344c498b0840c698a2465"
-dependencies = [
- "arrayvec 0.4.12",
- "itoa 0.4.8",
-]
-
-[[package]]
 name = "num-integer"
 version = "0.1.44"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3753,7 +3729,7 @@ dependencies = [
 [[package]]
 name = "pallet-balances"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "frame-benchmarking",
  "frame-support",
@@ -3793,7 +3769,7 @@ dependencies = [
 [[package]]
 name = "pallet-utility"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "frame-support",
  "frame-system",
@@ -3977,9 +3953,9 @@ dependencies = [
 
 [[package]]
 name = "paste"
-version = "1.0.6"
+version = "1.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0744126afe1a6dd7f394cb50a716dbe086cb06e255e53d8d0185d82828358fb5"
+checksum = "0c520e05135d6e763148b6426a837e239041653ba7becd2e538c076c738025fc"
 
 [[package]]
 name = "pbkdf2"
@@ -4293,9 +4269,9 @@ dependencies = [
 
 [[package]]
 name = "quote"
-version = "1.0.16"
+version = "1.0.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b4af2ec4714533fcdf07e886f17025ace8b997b9ce51204ee69b6da831c3da57"
+checksum = "632d02bff7f874a36f33ea8bb416cd484b90cc66c1194b1a1110d067a7013f58"
 dependencies = [
  "proc-macro2",
 ]
@@ -4366,7 +4342,7 @@ version = "0.6.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d34f1408f55294453790c48b2f1ebbb1c5b4b7563eb1f418bcfcfdbb06ebb4e7"
 dependencies = [
- "getrandom 0.2.5",
+ "getrandom 0.2.6",
 ]
 
 [[package]]
@@ -4405,9 +4381,9 @@ checksum = "60a357793950651c4ed0f3f52338f53b2f809f32d83a07f72909fa13e4c6c1e3"
 
 [[package]]
 name = "redox_syscall"
-version = "0.2.11"
+version = "0.2.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8380fe0152551244f0747b1bf41737e0f8a74f97a14ccefd1148187271634f3c"
+checksum = "8ae183fc1b06c149f0c1793e1eb447c8b04bfe46d48e9e48bfb8d2d7ed64ecf0"
 dependencies = [
  "bitflags",
 ]
@@ -4418,7 +4394,7 @@ version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7776223e2696f1aa4c6b0170e83212f47296a00424305117d013dfe86fb0fe55"
 dependencies = [
- "getrandom 0.2.5",
+ "getrandom 0.2.6",
  "redox_syscall",
  "thiserror",
 ]
@@ -4562,7 +4538,7 @@ version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bfa0f585226d2e68097d4f95d113b15b83a82e819ab25717ec0590d9584ef366"
 dependencies = [
- "semver 1.0.6",
+ "semver 1.0.7",
 ]
 
 [[package]]
@@ -4625,7 +4601,7 @@ dependencies = [
 [[package]]
 name = "sc-allocator"
 version = "4.1.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "log",
  "sp-core",
@@ -4636,10 +4612,9 @@ dependencies = [
 [[package]]
 name = "sc-authority-discovery"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "async-trait",
- "axlib-prometheus-endpoint",
  "futures 0.3.21",
  "futures-timer",
  "ip_network",
@@ -4657,13 +4632,14 @@ dependencies = [
  "sp-core",
  "sp-keystore",
  "sp-runtime",
+ "substrate-prometheus-endpoint",
  "thiserror",
 ]
 
 [[package]]
 name = "sc-block-builder"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "parity-scale-codec",
  "sc-client-api",
@@ -4679,7 +4655,7 @@ dependencies = [
 [[package]]
 name = "sc-chain-spec"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "impl-trait-for-tuples",
  "memmap2 0.5.3",
@@ -4696,7 +4672,7 @@ dependencies = [
 [[package]]
 name = "sc-chain-spec-derive"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "proc-macro-crate 1.1.3",
  "proc-macro2",
@@ -4707,7 +4683,7 @@ dependencies = [
 [[package]]
 name = "sc-cli"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "chrono",
  "clap",
@@ -4745,9 +4721,8 @@ dependencies = [
 [[package]]
 name = "sc-client-api"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
- "axlib-prometheus-endpoint",
  "fnv",
  "futures 0.3.21",
  "hash-db",
@@ -4768,12 +4743,13 @@ dependencies = [
  "sp-state-machine",
  "sp-storage",
  "sp-trie",
+ "substrate-prometheus-endpoint",
 ]
 
 [[package]]
 name = "sc-client-db"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "hash-db",
  "kvdb",
@@ -4798,10 +4774,9 @@ dependencies = [
 [[package]]
 name = "sc-consensus"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "async-trait",
- "axlib-prometheus-endpoint",
  "futures 0.3.21",
  "futures-timer",
  "libp2p",
@@ -4816,13 +4791,14 @@ dependencies = [
  "sp-core",
  "sp-runtime",
  "sp-state-machine",
+ "substrate-prometheus-endpoint",
  "thiserror",
 ]
 
 [[package]]
 name = "sc-executor"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "lazy_static",
  "libsecp256k1",
@@ -4849,7 +4825,7 @@ dependencies = [
 [[package]]
 name = "sc-executor-common"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "environmental",
  "parity-scale-codec",
@@ -4866,7 +4842,7 @@ dependencies = [
 [[package]]
 name = "sc-executor-wasmi"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "log",
  "parity-scale-codec",
@@ -4882,7 +4858,7 @@ dependencies = [
 [[package]]
 name = "sc-informant"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "ansi_term",
  "futures 0.3.21",
@@ -4899,7 +4875,7 @@ dependencies = [
 [[package]]
 name = "sc-keystore"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "async-trait",
  "hex",
@@ -4914,12 +4890,11 @@ dependencies = [
 [[package]]
 name = "sc-network"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "async-std",
  "async-trait",
  "asynchronous-codec 0.5.0",
- "axlib-prometheus-endpoint",
  "bitflags",
  "bytes 1.1.0",
  "cid",
@@ -4955,6 +4930,7 @@ dependencies = [
  "sp-core",
  "sp-finality-grandpa",
  "sp-runtime",
+ "substrate-prometheus-endpoint",
  "thiserror",
  "unsigned-varint 0.6.0",
  "void",
@@ -4964,7 +4940,7 @@ dependencies = [
 [[package]]
 name = "sc-offchain"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "bytes 1.1.0",
  "fnv",
@@ -4992,7 +4968,7 @@ dependencies = [
 [[package]]
 name = "sc-peerset"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "futures 0.3.21",
  "libp2p",
@@ -5005,7 +4981,7 @@ dependencies = [
 [[package]]
 name = "sc-rpc"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "futures 0.3.21",
  "hash-db",
@@ -5036,7 +5012,7 @@ dependencies = [
 [[package]]
 name = "sc-rpc-api"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "futures 0.3.21",
  "jsonrpc-core",
@@ -5061,9 +5037,8 @@ dependencies = [
 [[package]]
 name = "sc-rpc-server"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
- "axlib-prometheus-endpoint",
  "futures 0.3.21",
  "jsonrpc-core",
  "jsonrpc-http-server",
@@ -5072,16 +5047,16 @@ dependencies = [
  "jsonrpc-ws-server",
  "log",
  "serde_json",
+ "substrate-prometheus-endpoint",
  "tokio",
 ]
 
 [[package]]
 name = "sc-service"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "async-trait",
- "axlib-prometheus-endpoint",
  "directories",
  "exit-future",
  "futures 0.3.21",
@@ -5132,6 +5107,7 @@ dependencies = [
  "sp-transaction-storage-proof",
  "sp-trie",
  "sp-version",
+ "substrate-prometheus-endpoint",
  "tempfile",
  "thiserror",
  "tokio",
@@ -5142,7 +5118,7 @@ dependencies = [
 [[package]]
 name = "sc-state-db"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "log",
  "parity-scale-codec",
@@ -5156,7 +5132,7 @@ dependencies = [
 [[package]]
 name = "sc-telemetry"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "chrono",
  "futures 0.3.21",
@@ -5174,7 +5150,7 @@ dependencies = [
 [[package]]
 name = "sc-tracing"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "ansi_term",
  "atty",
@@ -5205,7 +5181,7 @@ dependencies = [
 [[package]]
 name = "sc-tracing-proc-macro"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "proc-macro-crate 1.1.3",
  "proc-macro2",
@@ -5216,9 +5192,8 @@ dependencies = [
 [[package]]
 name = "sc-transaction-pool"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
- "axlib-prometheus-endpoint",
  "futures 0.3.21",
  "futures-timer",
  "linked-hash-map",
@@ -5237,13 +5212,14 @@ dependencies = [
  "sp-runtime",
  "sp-tracing",
  "sp-transaction-pool",
+ "substrate-prometheus-endpoint",
  "thiserror",
 ]
 
 [[package]]
 name = "sc-transaction-pool-api"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "futures 0.3.21",
  "log",
@@ -5256,7 +5232,7 @@ dependencies = [
 [[package]]
 name = "sc-utils"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "futures 0.3.21",
  "futures-timer",
@@ -5384,9 +5360,9 @@ dependencies = [
 
 [[package]]
 name = "semver"
-version = "1.0.6"
+version = "1.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a4a3381e03edd24287172047536f20cabde766e2cd3e65e6b00fb3af51c4f38d"
+checksum = "d65bd28f48be7196d222d95b9243287f48d27aca604e08497513019ff0502cc4"
 
 [[package]]
 name = "semver-parser"
@@ -5629,7 +5605,7 @@ dependencies = [
 [[package]]
 name = "sp-api"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "hash-db",
  "log",
@@ -5646,7 +5622,7 @@ dependencies = [
 [[package]]
 name = "sp-api-proc-macro"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "blake2-rfc",
  "proc-macro-crate 1.1.3",
@@ -5658,7 +5634,7 @@ dependencies = [
 [[package]]
 name = "sp-application-crypto"
 version = "5.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "parity-scale-codec",
  "scale-info",
@@ -5671,7 +5647,7 @@ dependencies = [
 [[package]]
 name = "sp-arithmetic"
 version = "4.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "integer-sqrt",
  "num-traits",
@@ -5686,7 +5662,7 @@ dependencies = [
 [[package]]
 name = "sp-authority-discovery"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "parity-scale-codec",
  "scale-info",
@@ -5699,7 +5675,7 @@ dependencies = [
 [[package]]
 name = "sp-block-builder"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "parity-scale-codec",
  "sp-api",
@@ -5711,7 +5687,7 @@ dependencies = [
 [[package]]
 name = "sp-blockchain"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "futures 0.3.21",
  "log",
@@ -5729,7 +5705,7 @@ dependencies = [
 [[package]]
 name = "sp-consensus"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "async-trait",
  "futures 0.3.21",
@@ -5748,7 +5724,7 @@ dependencies = [
 [[package]]
 name = "sp-consensus-babe"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "async-trait",
  "merlin",
@@ -5771,7 +5747,7 @@ dependencies = [
 [[package]]
 name = "sp-consensus-slots"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "parity-scale-codec",
  "scale-info",
@@ -5783,7 +5759,7 @@ dependencies = [
 [[package]]
 name = "sp-consensus-vrf"
 version = "0.10.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "parity-scale-codec",
  "schnorrkel",
@@ -5795,7 +5771,7 @@ dependencies = [
 [[package]]
 name = "sp-core"
 version = "5.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "base58",
  "bitflags",
@@ -5843,7 +5819,7 @@ dependencies = [
 [[package]]
 name = "sp-core-hashing"
 version = "4.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "blake2-rfc",
  "byteorder",
@@ -5856,7 +5832,7 @@ dependencies = [
 [[package]]
 name = "sp-core-hashing-proc-macro"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -5867,7 +5843,7 @@ dependencies = [
 [[package]]
 name = "sp-database"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "kvdb",
  "parking_lot 0.11.2",
@@ -5876,7 +5852,7 @@ dependencies = [
 [[package]]
 name = "sp-debug-derive"
 version = "4.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -5886,7 +5862,7 @@ dependencies = [
 [[package]]
 name = "sp-externalities"
 version = "0.11.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "environmental",
  "parity-scale-codec",
@@ -5897,7 +5873,7 @@ dependencies = [
 [[package]]
 name = "sp-finality-grandpa"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "finality-grandpa",
  "log",
@@ -5915,7 +5891,7 @@ dependencies = [
 [[package]]
 name = "sp-inherents"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "async-trait",
  "impl-trait-for-tuples",
@@ -5929,7 +5905,7 @@ dependencies = [
 [[package]]
 name = "sp-io"
 version = "5.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "futures 0.3.21",
  "hash-db",
@@ -5953,7 +5929,7 @@ dependencies = [
 [[package]]
 name = "sp-keyring"
 version = "5.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "lazy_static",
  "sp-core",
@@ -5964,7 +5940,7 @@ dependencies = [
 [[package]]
 name = "sp-keystore"
 version = "0.11.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "async-trait",
  "futures 0.3.21",
@@ -5981,7 +5957,7 @@ dependencies = [
 [[package]]
 name = "sp-maybe-compressed-blob"
 version = "4.1.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "thiserror",
  "zstd",
@@ -5990,7 +5966,7 @@ dependencies = [
 [[package]]
 name = "sp-offchain"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "sp-api",
  "sp-core",
@@ -6000,7 +5976,7 @@ dependencies = [
 [[package]]
 name = "sp-panic-handler"
 version = "4.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "backtrace",
  "lazy_static",
@@ -6010,7 +5986,7 @@ dependencies = [
 [[package]]
 name = "sp-rpc"
 version = "5.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "rustc-hash",
  "serde",
@@ -6020,7 +5996,7 @@ dependencies = [
 [[package]]
 name = "sp-runtime"
 version = "5.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "either",
  "hash256-std-hasher",
@@ -6042,7 +6018,7 @@ dependencies = [
 [[package]]
 name = "sp-runtime-interface"
 version = "5.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "impl-trait-for-tuples",
  "parity-scale-codec",
@@ -6059,7 +6035,7 @@ dependencies = [
 [[package]]
 name = "sp-runtime-interface-proc-macro"
 version = "4.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "Inflector",
  "proc-macro-crate 1.1.3",
@@ -6071,7 +6047,7 @@ dependencies = [
 [[package]]
 name = "sp-serializer"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "serde",
  "serde_json",
@@ -6080,7 +6056,7 @@ dependencies = [
 [[package]]
 name = "sp-session"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "parity-scale-codec",
  "scale-info",
@@ -6094,7 +6070,7 @@ dependencies = [
 [[package]]
 name = "sp-staking"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "parity-scale-codec",
  "scale-info",
@@ -6105,7 +6081,7 @@ dependencies = [
 [[package]]
 name = "sp-state-machine"
 version = "0.11.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "hash-db",
  "log",
@@ -6128,12 +6104,12 @@ dependencies = [
 [[package]]
 name = "sp-std"
 version = "4.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 
 [[package]]
 name = "sp-storage"
 version = "5.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "impl-serde",
  "parity-scale-codec",
@@ -6146,7 +6122,7 @@ dependencies = [
 [[package]]
 name = "sp-tasks"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "log",
  "sp-core",
@@ -6159,7 +6135,7 @@ dependencies = [
 [[package]]
 name = "sp-timestamp"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "async-trait",
  "futures-timer",
@@ -6175,7 +6151,7 @@ dependencies = [
 [[package]]
 name = "sp-tracing"
 version = "4.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "parity-scale-codec",
  "sp-std",
@@ -6187,7 +6163,7 @@ dependencies = [
 [[package]]
 name = "sp-transaction-pool"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "sp-api",
  "sp-runtime",
@@ -6196,7 +6172,7 @@ dependencies = [
 [[package]]
 name = "sp-transaction-storage-proof"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "async-trait",
  "log",
@@ -6212,7 +6188,7 @@ dependencies = [
 [[package]]
 name = "sp-trie"
 version = "5.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "hash-db",
  "memory-db",
@@ -6227,7 +6203,7 @@ dependencies = [
 [[package]]
 name = "sp-version"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "impl-serde",
  "parity-scale-codec",
@@ -6244,7 +6220,7 @@ dependencies = [
 [[package]]
 name = "sp-version-proc-macro"
 version = "4.0.0-dev"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "parity-scale-codec",
  "proc-macro2",
@@ -6255,7 +6231,7 @@ dependencies = [
 [[package]]
 name = "sp-wasm-interface"
 version = "5.0.0"
-source = "git+https://github.com/axtend/axlib?branch=axlib#70518802828c9f2e0b0999f87e872f0867e037e7"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
 dependencies = [
  "impl-trait-for-tuples",
  "log",
@@ -6272,12 +6248,10 @@ checksum = "6e63cff320ae2c57904679ba7cb63280a3dc4613885beafb148ee7bf9aa9042d"
 
 [[package]]
 name = "ss58-registry"
-version = "1.17.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7b84a70894df7a73666e0694f44b41a9571625e9546fb58a0818a565d2c7e084"
+version = "1.11.0"
+source = "git+https://github.com/axtend/ss58?branch=1.11.0#d889fa38025d485031003dc1222a401e7f674be6"
 dependencies = [
  "Inflector",
- "num-format",
  "proc-macro2",
  "quote",
  "serde",
@@ -6352,6 +6326,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "substrate-prometheus-endpoint"
+version = "0.10.0-dev"
+source = "git+https://github.com/axtend/axlib?branch=axlib#60b519107612be2c914630048e72ae20316d5286"
+dependencies = [
+ "async-std",
+ "futures-util",
+ "hyper",
+ "log",
+ "prometheus",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
 name = "subtle"
 version = "2.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6359,9 +6347,9 @@ checksum = "6bdef32e8150c2a081110b42772ffe7d7c9032b606bc226c8260fd97e0976601"
 
 [[package]]
 name = "syn"
-version = "1.0.89"
+version = "1.0.90"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ea297be220d52398dcc07ce15a209fce436d361735ac1db700cab3b6cdfb9f54"
+checksum = "704df27628939572cd88d33f171cd6f896f4eaca85252c6e0a72d8d8287ee86f"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -7255,7 +7243,7 @@ dependencies = [
 [[package]]
 name = "xcm"
 version = "0.9.17"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "derivative",
  "impl-trait-for-tuples",
@@ -7268,7 +7256,7 @@ dependencies = [
 [[package]]
 name = "xcm-procedural"
 version = "0.1.0"
-source = "git+https://github.com/axtend/axia?branch=axia#7785bfa125a3b9ab5a7d810d9034e9e401c50811"
+source = "git+https://github.com/axtend/axia?branch=axia#e49a23f75ad33b16d9bd0b88580caba98ca39b07"
 dependencies = [
  "Inflector",
  "proc-macro2",

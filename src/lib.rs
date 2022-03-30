@@ -1,18 +1,18 @@
 // Copyright 2019-2020 PureStake Inc.
-// This file is part of Moonbeam.
+// This file is part of Axtend.
 
-// Moonbeam is free software: you can redistribute it and/or modify
+// Axtend is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 
-// Moonbeam is distributed in the hope that it will be useful,
+// Axtend is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 
 // You should have received a copy of the GNU General Public License
-// along with Moonbeam.  If not, see <http://www.gnu.org/licenses/>.
+// along with Axtend.  If not, see <http://www.gnu.org/licenses/>.
 
 //! # Crowdloan Rewards Pallet
 //!
@@ -51,7 +51,7 @@
 //! * **ReadingRelayState**
 //!
 //! The most elegant, but most complex solution would be for the para to read the contributions
-//! directly from the relay state. Blocked by https://github.com/paritytech/cumulus/issues/320 so
+//! directly from the relay state. Blocked by https://github.com/axiatech/cumulus/issues/320 so
 //! I won't pursue it further right now. I can't decide whether that would really add security /
 //! trustlessness, or is just a sexy blockchain thing to do. Contributors can always audit the
 //! democracy proposal and make sure their contribution is in it, so in that sense reading relay state
@@ -156,7 +156,7 @@ pub mod pallet {
 
 	/// Stores info about the rewards owed as well as how much has been vested so far.
 	/// For a primer on this kind of design, see the recipe on compounding interest
-	/// https://axlib.dev/recipes/fixed-point.html#continuously-compounding
+	/// https://substrate.dev/recipes/fixed-point.html#continuously-compounding
 	#[derive(Default, Clone, Encode, Decode, RuntimeDebug, PartialEq, scale_info::TypeInfo)]
 	#[scale_info(skip_type_params(T))]
 	pub struct RewardInfo<T: Config> {
